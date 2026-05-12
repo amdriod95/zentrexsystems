@@ -3,10 +3,20 @@ import { PhoneCall, CalendarCheck, Languages, Mic, ArrowRight, Play } from "luci
 
 export function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-24 overflow-hidden">
-      <div className="glow-orb h-[400px] w-[400px] -top-20 -left-20 bg-brand-purple/40" />
-      <div className="glow-orb h-[500px] w-[500px] top-40 -right-32 bg-brand-pink/40" />
-      <div className="glow-orb h-[300px] w-[300px] bottom-0 left-1/3 bg-brand-blue/30" />
+    <section id="top" className="relative pt-32 pb-24 overflow-hidden bg-background">
+      {/* Subtle grid pattern background */}
+      <div
+        className="absolute inset-0 -z-10 opacity-[0.4]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, oklch(0.92 0.01 280) 1px, transparent 1px), linear-gradient(to bottom, oklch(0.92 0.01 280) 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
+        }}
+      />
+      <div className="absolute top-20 right-1/4 h-2 w-2 rounded-full bg-brand-purple" />
+      <div className="absolute bottom-32 left-20 h-2 w-2 rounded-full bg-brand-pink" />
+      <div className="absolute top-1/3 left-1/4 h-1.5 w-1.5 rounded-full bg-brand-blue" />
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative">
         <div className="space-y-7 animate-fade-up">
