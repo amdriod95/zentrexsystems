@@ -1,6 +1,6 @@
 import { Section } from "./Section";
 import {
-  PhoneCall, CalendarCheck, MessageSquare, Mic, Languages, Database, CalendarDays,
+  PhoneCall, CalendarCheck, MessageSquare, Mic, Languages, Database,
 } from "lucide-react";
 
 const features = [
