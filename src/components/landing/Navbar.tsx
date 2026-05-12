@@ -25,16 +25,16 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/90 transition-all duration-300 ${
-        scrolled ? "border-b border-border shadow-card" : "border-b border-border/50"
+      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/85 transition-all duration-300 ${
+        scrolled ? "border-b border-border shadow-card" : "border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 font-display font-bold text-lg">
-          <span className="h-8 w-8 rounded-lg bg-gradient-hero grid place-items-center text-white shadow-elegant">
+        <a href="#top" className="flex items-center gap-2 font-display font-semibold text-lg">
+          <span className="h-8 w-8 rounded-full bg-foreground grid place-items-center text-background">
             <Sparkles className="h-4 w-4" />
           </span>
-          <span>Zentrex<span className="text-gradient"> Systems</span></span>
+          <span>Zentrex<span className="font-serif-italic text-brand-sage"> Systems</span></span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8 text-sm text-muted-foreground">

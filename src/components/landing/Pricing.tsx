@@ -50,27 +50,27 @@ export function Pricing() {
             key={p.name}
             className={`relative rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-1 flex flex-col ${
               p.popular
-                ? "bg-gradient-hero text-white border-transparent shadow-elegant scale-[1.02]"
-                : "bg-white border-border shadow-card hover:shadow-elegant"
+                ? "bg-foreground text-background border-transparent shadow-elegant scale-[1.02]"
+                : "bg-card border-border shadow-card hover:shadow-elegant"
             }`}
           >
             {p.popular && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-white text-brand-purple text-xs font-bold shadow-card">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-brand-sage text-background text-xs font-bold shadow-card">
                 MOST POPULAR
               </span>
             )}
             <h3 className="text-2xl font-bold">{p.name}</h3>
-            <p className={`text-sm mt-1 ${p.popular ? "text-white/85" : "text-muted-foreground"}`}>
+            <p className={`text-sm mt-1 ${p.popular ? "text-background/75" : "text-muted-foreground"}`}>
               {p.tagline}
             </p>
             <div className="mt-6 mb-6">
               <span className="text-5xl font-bold">${p.price}</span>
-              <span className={`text-sm ${p.popular ? "text-white/85" : "text-muted-foreground"}`}>/month</span>
+              <span className={`text-sm ${p.popular ? "text-background/75" : "text-muted-foreground"}`}>/month</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               {p.features.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm">
-                  <Check className={`h-4 w-4 mt-0.5 shrink-0 ${p.popular ? "text-white" : "text-brand-purple"}`} />
+                  <Check className={`h-4 w-4 mt-0.5 shrink-0 ${p.popular ? "text-brand-sage" : "text-brand-sage"}`} />
                   <span>{f}</span>
                 </li>
               ))}
@@ -79,7 +79,7 @@ export function Pricing() {
               variant={p.popular ? "soft" : "hero"}
               size="lg"
               asChild
-              className="w-full"
+              className={`w-full ${p.popular ? "bg-background text-foreground border-background hover:bg-background/90" : ""}`}
             >
               <a href="#contact">Get Started</a>
             </Button>

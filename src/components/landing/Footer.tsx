@@ -2,14 +2,14 @@ import { Sparkles, Twitter, Linkedin, Instagram, Facebook, Mail } from "lucide-r
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-white">
+    <footer className="border-t border-border bg-background">
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2 space-y-4">
-          <a href="#top" className="flex items-center gap-2 font-display font-bold text-lg">
-            <span className="h-8 w-8 rounded-lg bg-gradient-hero grid place-items-center text-white">
+          <a href="#top" className="flex items-center gap-2 font-display font-semibold text-lg">
+            <span className="h-8 w-8 rounded-full bg-foreground grid place-items-center text-background">
               <Sparkles className="h-4 w-4" />
             </span>
-            Zentrex<span className="text-gradient"> Systems</span>
+            <span>Zentrex<span className="font-serif-italic text-brand-sage"> Systems</span></span>
           </a>
           <p className="text-sm text-muted-foreground max-w-md">
             The AI receptionist that answers calls, books appointments, and grows your business — 24/7.
@@ -18,7 +18,8 @@ export function Footer() {
             href="mailto:contact@zentrexsystems.com"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
           >
-            <Mail className="h-4 w-4" /> contact@zentrexsystems.com
+            <Mail className="h-4 w-4" />
+            <span>contact@zentrexsystems.com</span>
           </a>
         </div>
 
@@ -39,7 +40,7 @@ export function Footer() {
               <a
                 key={i}
                 href="#"
-                className="h-9 w-9 rounded-lg border border-border grid place-items-center text-muted-foreground hover:text-brand-purple hover:border-brand-purple transition-colors"
+                className="h-9 w-9 rounded-full border border-border grid place-items-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
               >
                 <Icon className="h-4 w-4" />
               </a>
