@@ -9,8 +9,7 @@ const features = [
   { i: MessageSquare, t: "SMS Follow-Ups", d: "Automated confirmations, reminders, and follow-ups by text." },
   { i: Mic, t: "AI Voice Conversations", d: "Natural, human-like voice that adapts to each caller's tone." },
   { i: Languages, t: "Multi-Language Support", d: "Speak English, Spanish, French, and more — automatically." },
-  { i: Database, t: "CRM Integration", d: "Plugs into HubSpot, GoHighLevel, Salesforce and 30+ tools." },
-  { i: CalendarDays, t: "Calendar Integration", d: "Google, Outlook, Calendly — synced live, both directions." },
+  { i: Database, t: "CRM & Calendar Sync", d: "Plugs into HubSpot, Salesforce, Google, Outlook, Calendly + 30 more." },
 ];
 
 export function Features() {
