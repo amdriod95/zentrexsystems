@@ -17,7 +17,7 @@ export function LeadHandling() {
       eyebrow="Lead Handling"
       title={<>Your AI Handles <span className="text-gradient">The Entire Conversation</span></>}
       subtitle="From hello to confirmation — every step happens automatically without human intervention."
-      className="bg-gradient-soft"
+      className="bg-secondary/40"
     >
       <div className="grid lg:grid-cols-2 gap-10 items-center">
         <ol className="space-y-3">

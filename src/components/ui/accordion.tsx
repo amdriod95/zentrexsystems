@@ -41,6 +41,9 @@ const AccordionContent = React.forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    style={{
+      // Radix sets --radix-accordion-content-height; keep content visible if animation classes are missing
+    }}
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>
