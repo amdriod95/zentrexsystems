@@ -1,6 +1,7 @@
 import { Section } from "./Section";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useBookDemo } from "./BookDemoDialog";
 
 const plans = [
   {
