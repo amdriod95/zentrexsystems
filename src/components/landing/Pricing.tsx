@@ -38,6 +38,7 @@ const plans = [
 ];
 
 export function Pricing() {
+  const { open } = useBookDemo();
   return (
     <Section
       id="pricing"
