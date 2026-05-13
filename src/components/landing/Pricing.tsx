@@ -50,7 +50,7 @@ export function Pricing() {
             key={p.name}
             className={`relative rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-1 flex flex-col ${
               p.popular
-                ? "bg-foreground text-background border-transparent shadow-elegant scale-[1.02]"
+                ? "bg-gradient-to-br from-[oklch(0.55_0.22_275)] to-[oklch(0.45_0.18_245)] text-white border-transparent shadow-elegant scale-[1.02]"
                 : "bg-card border-border shadow-card hover:shadow-elegant"
             }`}
           >
@@ -60,17 +60,17 @@ export function Pricing() {
               </span>
             )}
             <h3 className="text-2xl font-bold">{p.name}</h3>
-            <p className={`text-sm mt-1 ${p.popular ? "text-background/75" : "text-muted-foreground"}`}>
+            <p className={`text-sm mt-1 ${p.popular ? "text-white/80" : "text-muted-foreground"}`}>
               {p.tagline}
             </p>
             <div className="mt-6 mb-6">
               <span className="text-5xl font-bold">${p.price}</span>
-              <span className={`text-sm ${p.popular ? "text-background/75" : "text-muted-foreground"}`}>/month</span>
+              <span className={`text-sm ${p.popular ? "text-white/80" : "text-muted-foreground"}`}>/month</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               {p.features.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm">
-                  <Check className={`h-4 w-4 mt-0.5 shrink-0 ${p.popular ? "text-brand-sage" : "text-brand-sage"}`} />
+                  <Check className={`h-4 w-4 mt-0.5 shrink-0 ${p.popular ? "text-white" : "text-brand-sage"}`} />
                   <span>{f}</span>
                 </li>
               ))}
@@ -79,7 +79,7 @@ export function Pricing() {
               variant={p.popular ? "soft" : "hero"}
               size="lg"
               asChild
-              className={`w-full ${p.popular ? "bg-background text-foreground border-background hover:bg-background/90" : ""}`}
+              className={`w-full ${p.popular ? "bg-white text-[oklch(0.45_0.18_270)] border-white hover:bg-white/90" : ""}`}
             >
               <a href="#contact">Get Started</a>
             </Button>
