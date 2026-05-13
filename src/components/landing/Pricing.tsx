@@ -80,10 +80,10 @@ export function Pricing() {
             <Button
               variant={p.popular ? "soft" : "hero"}
               size="lg"
-              asChild
+              onClick={open}
               className={`w-full ${p.popular ? "bg-white text-[oklch(0.45_0.18_270)] border-white hover:bg-white/90" : ""}`}
             >
-              <a href="#contact">Get Started</a>
+              Get Started
             </Button>
           </div>
         ))}
