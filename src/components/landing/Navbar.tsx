@@ -30,11 +30,11 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 font-display font-semibold text-lg">
-          <span className="h-8 w-8 rounded-full bg-foreground grid place-items-center text-background">
+        <a href="#top" className="flex items-center gap-2 font-display font-bold text-lg">
+          <span className="h-8 w-8 rounded-xl bg-gradient-to-br from-[oklch(0.55_0.22_275)] to-[oklch(0.78_0.14_210)] grid place-items-center text-white shadow-[0_0_16px_-2px_oklch(0.55_0.22_275/0.6)]">
             <Sparkles className="h-4 w-4" />
           </span>
-          <span>Zentrex<span className="font-serif-italic text-brand-sage"> Systems</span></span>
+          <span>Zentrex<span className="text-gradient"> Systems</span></span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8 text-sm text-muted-foreground">
