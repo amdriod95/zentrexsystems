@@ -3,6 +3,7 @@ import { ArrowRight, Check, TrendingUp, PhoneCall } from "lucide-react";
 import { useBookDemo } from "./BookDemoDialog";
 
 export function Hero() {
+  const { open } = useBookDemo();
   return (
     <section
       id="top"
