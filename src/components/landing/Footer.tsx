@@ -50,7 +50,17 @@ export function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="max-w-7xl mx-auto px-6 py-5 text-xs text-muted-foreground flex flex-wrap justify-between gap-2">
-          <p>© {new Date().getFullYear()} Zentrex Systems. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Zentrex Systems. All rights reserved. Designed by{" "}
+            <a
+              href="https://www.upwork.com/freelancers/~017d2e3acfc9ccd831"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground hover:text-brand-sage underline-offset-4 hover:underline"
+            >
+              Ahmad Mujtaba
+            </a>
+          </p>
           <p>Built for businesses that never miss a call.</p>
         </div>
       </div>
