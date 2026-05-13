@@ -18,7 +18,7 @@ export function HowItWorks() {
       <div className="grid md:grid-cols-3 gap-6 relative">
         <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
         {steps.map(({ n, i: Icon, t, d }) => (
-          <div key={n} className="relative bg-white rounded-2xl border border-border p-7 shadow-card text-center">
+          <div key={n} className="relative bg-white/5 rounded-2xl border border-white/10 p-7 shadow-card text-center">
             <div className="h-14 w-14 mx-auto rounded-2xl bg-gradient-hero grid place-items-center text-white shadow-elegant mb-5 relative">
               <Icon className="h-6 w-6" />
               <span className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-white/5 border border-white/10 text-xs font-bold grid place-items-center text-brand-purple">

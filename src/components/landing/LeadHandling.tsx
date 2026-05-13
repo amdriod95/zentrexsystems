@@ -24,7 +24,7 @@ export function LeadHandling() {
           {flow.map(({ i: Icon, t }, idx) => (
             <li
               key={t}
-              className="flex items-center gap-4 bg-white rounded-2xl border border-border p-4 shadow-card hover:shadow-elegant transition-all"
+              className="flex items-center gap-4 bg-white/5 rounded-2xl border border-white/10 p-4 shadow-card hover:shadow-elegant transition-all"
             >
               <span className="h-9 w-9 rounded-xl bg-gradient-hero grid place-items-center text-white text-sm font-bold shrink-0">
                 {idx + 1}
