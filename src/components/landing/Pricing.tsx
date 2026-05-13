@@ -50,7 +50,7 @@ export function Pricing() {
             key={p.name}
             className={`relative rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-1 flex flex-col ${
               p.popular
-                ? "bg-foreground text-background border-transparent shadow-elegant scale-[1.02]"
+                ? "bg-gradient-to-br from-[oklch(0.55_0.22_275)] to-[oklch(0.45_0.18_245)] text-white border-transparent shadow-elegant scale-[1.02]"
                 : "bg-card border-border shadow-card hover:shadow-elegant"
             }`}
           >
