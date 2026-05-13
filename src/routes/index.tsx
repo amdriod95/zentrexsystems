@@ -11,6 +11,7 @@ import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
+import { BookDemoProvider } from "@/components/landing/BookDemoDialog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
