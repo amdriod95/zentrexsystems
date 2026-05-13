@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useBookDemo } from "./BookDemoDialog";
 
 export function FinalCTA() {
+  const { open } = useBookDemo();
   return (
     <section id="contact" className="relative py-24 px-6">
       <div className="max-w-6xl mx-auto relative overflow-hidden rounded-3xl bg-gradient-hero p-12 md:p-20 text-center text-white shadow-elegant">
@@ -16,17 +18,15 @@ export function FinalCTA() {
             Your AI receptionist works 24/7 so you never lose another lead.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Button variant="soft" size="xl" asChild>
-              <a href="mailto:contact@zentrexsystems.com?subject=Book%20a%20Demo">
-                Book a Demo <ArrowRight className="h-4 w-4" />
-              </a>
+            <Button variant="soft" size="xl" onClick={open}>
+              Book a Demo <ArrowRight className="h-4 w-4" />
             </Button>
             <Button
               size="xl"
               asChild
               className="bg-white/15 backdrop-blur text-white border border-white/30 hover:bg-white/25 rounded-2xl"
             >
-              <a href="#pricing">Get Started</a>
+              <a href="#pricing">See pricing</a>
             </Button>
           </div>
         </div>

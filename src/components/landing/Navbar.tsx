@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sparkles } from "lucide-react";
+import { useBookDemo } from "./BookDemoDialog";
 
 const links = [
   { href: "#features", label: "Features" },
@@ -15,6 +16,7 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { open: openBookDemo } = useBookDemo();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -46,8 +48,8 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button variant="hero" size="default" asChild className="hidden sm:inline-flex">
-            <a href="#contact">Book Demo</a>
+          <Button variant="hero" size="default" onClick={openBookDemo} className="hidden sm:inline-flex">
+            Book Demo
           </Button>
           <button
             className="lg:hidden h-10 w-10 grid place-items-center rounded-lg border border-border"
@@ -71,8 +73,8 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
-          <Button variant="hero" asChild>
-            <a href="#contact" onClick={() => setOpen(false)}>Book Demo</a>
+          <Button variant="hero" onClick={() => { setOpen(false); openBookDemo(); }}>
+            Book Demo
           </Button>
         </div>
       )}
