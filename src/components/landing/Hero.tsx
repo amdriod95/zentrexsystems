@@ -120,7 +120,7 @@ export function Hero() {
           </div>
 
           {/* Floating stats */}
-          <div className="absolute -top-6 -right-4 bg-white/8 backdrop-blur-xl border border-white/15 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-float">
+          <div className="absolute -top-6 -left-4 md:-left-8 bg-white/8 backdrop-blur-xl border border-white/15 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-float z-20">
             <div className="p-2 rounded-lg bg-[oklch(0.78_0.18_160)]/15 text-[oklch(0.82_0.18_160)]">
               <TrendingUp className="w-5 h-5" />
             </div>
@@ -134,7 +134,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="absolute -bottom-6 -left-6 bg-white/8 backdrop-blur-xl border border-white/15 px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+          <div className="absolute -bottom-8 -right-4 md:-right-8 bg-white/8 backdrop-blur-xl border border-white/15 px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3 z-20">
             <div className="p-3 rounded-xl bg-[oklch(0.55_0.22_275)]/20 text-[oklch(0.78_0.18_275)]">
               <PhoneCall className="w-5 h-5" />
             </div>

@@ -26,7 +26,7 @@ export function Problem() {
               className={`rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 ${
                 isSolution
                   ? "bg-gradient-hero text-white border-transparent shadow-elegant"
-                  : "bg-white border-border shadow-card hover:shadow-elegant"
+                  : "bg-white/5 border-white/10 shadow-card hover:shadow-elegant"
               }`}
             >
               <div

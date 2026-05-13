@@ -22,7 +22,7 @@ export function Industries() {
         {items.map(({ i: Icon, t, d }) => (
           <div
             key={t}
-            className="group rounded-2xl bg-white border border-border p-7 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all duration-300"
+            className="group rounded-2xl bg-white/5 border border-white/10 p-7 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all duration-300"
           >
             <div className="h-12 w-12 rounded-xl bg-brand-purple/10 grid place-items-center text-brand-purple mb-4 group-hover:bg-gradient-hero group-hover:text-white transition-all">
               <Icon className="h-5 w-5" />

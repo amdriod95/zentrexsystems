@@ -24,7 +24,7 @@ export function LeadHandling() {
           {flow.map(({ i: Icon, t }, idx) => (
             <li
               key={t}
-              className="flex items-center gap-4 bg-white rounded-2xl border border-border p-4 shadow-card hover:shadow-elegant transition-all"
+              className="flex items-center gap-4 bg-white/5 rounded-2xl border border-white/10 p-4 shadow-card hover:shadow-elegant transition-all"
             >
               <span className="h-9 w-9 rounded-xl bg-gradient-hero grid place-items-center text-white text-sm font-bold shrink-0">
                 {idx + 1}
@@ -37,7 +37,7 @@ export function LeadHandling() {
 
         <div className="relative">
           <div className="absolute -inset-6 bg-gradient-hero opacity-20 blur-3xl rounded-3xl" />
-          <div className="relative rounded-3xl bg-white border border-border shadow-elegant p-6">
+          <div className="relative rounded-3xl bg-white/5 border border-white/10 shadow-elegant p-6">
             <div className="flex items-center justify-between mb-5">
               <p className="font-semibold">Live Conversation</p>
               <span className="text-xs px-2 py-1 rounded-full bg-brand-pink/10 text-brand-pink font-medium flex items-center gap-1.5">
