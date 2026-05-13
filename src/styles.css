@@ -68,45 +68,45 @@
 :root {
   --radius: 1rem;
 
-  /* Podium-inspired warm cream + sage palette */
-  --background: oklch(0.955 0.012 85);          /* warm cream #EFEBE4 */
-  --foreground: oklch(0.18 0.005 60);           /* near black ink */
-  --card: oklch(0.985 0.006 85);                /* off-white card */
-  --card-foreground: oklch(0.18 0.005 60);
-  --popover: oklch(0.985 0.006 85);
-  --popover-foreground: oklch(0.18 0.005 60);
+  /* Midnight + Cyan-Indigo Gradient palette */
+  --background: oklch(0.16 0.03 265);            /* deep slate-midnight #020617 */
+  --foreground: oklch(0.98 0.005 250);           /* near-white */
+  --card: oklch(0.22 0.035 265);                 /* slightly lighter card */
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.22 0.035 265);
+  --popover-foreground: oklch(0.98 0.005 250);
 
-  --primary: oklch(0.18 0.005 60);              /* charcoal CTA */
-  --primary-foreground: oklch(0.97 0.012 85);
+  --primary: oklch(0.55 0.22 275);               /* indigo-600 */
+  --primary-foreground: oklch(0.98 0.005 250);
 
-  --secondary: oklch(0.92 0.014 85);            /* darker cream */
-  --secondary-foreground: oklch(0.22 0.005 60);
-  --muted: oklch(0.92 0.014 85);
-  --muted-foreground: oklch(0.45 0.008 70);
+  --secondary: oklch(0.26 0.04 265);             /* slate-800 */
+  --secondary-foreground: oklch(0.92 0.01 250);
+  --muted: oklch(0.26 0.04 265);
+  --muted-foreground: oklch(0.72 0.03 255);      /* slate-400 */
 
-  --accent: oklch(0.86 0.025 165);              /* light sage */
-  --accent-foreground: oklch(0.22 0.02 165);
+  --accent: oklch(0.78 0.14 210);                /* cyan-400 */
+  --accent-foreground: oklch(0.18 0.04 265);
 
-  --destructive: oklch(0.55 0.18 27);
+  --destructive: oklch(0.62 0.22 27);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.88 0.012 85);
-  --input: oklch(0.88 0.012 85);
-  --ring: oklch(0.55 0.04 165);
+  --border: oklch(1 0 0 / 0.1);                  /* white/10 */
+  --input: oklch(1 0 0 / 0.1);
+  --ring: oklch(0.55 0.22 275);
 
-  /* Brand tokens — names kept for back-compat, remapped to Podium palette */
-  --brand-sage: oklch(0.62 0.035 165);          /* primary sage */
-  --brand-cream: oklch(0.94 0.018 85);
-  --brand-ink: oklch(0.18 0.005 60);
-  --brand-purple: oklch(0.62 0.035 165);        /* alias → sage */
-  --brand-blue:   oklch(0.55 0.04 200);         /* muted teal */
-  --brand-pink:   oklch(0.72 0.09 35);          /* warm terracotta accent */
-  --brand-orange: oklch(0.75 0.12 55);
+  /* Brand tokens — remapped to indigo/cyan */
+  --brand-sage: oklch(0.78 0.14 210);            /* cyan accent (alias kept) */
+  --brand-cream: oklch(0.22 0.035 265);
+  --brand-ink: oklch(0.98 0.005 250);
+  --brand-purple: oklch(0.55 0.22 275);          /* indigo */
+  --brand-blue:   oklch(0.78 0.14 210);          /* cyan */
+  --brand-pink:   oklch(0.7 0.18 340);
+  --brand-orange: oklch(0.78 0.16 60);
 
-  --gradient-hero: linear-gradient(135deg, oklch(0.62 0.035 165) 0%, oklch(0.55 0.04 175) 100%);
-  --gradient-soft: linear-gradient(180deg, oklch(0.96 0.012 85), oklch(0.93 0.016 85));
-  --gradient-text: none;
-  --shadow-elegant: 0 24px 60px -24px oklch(0.2 0.02 70 / 0.18);
-  --shadow-card: 0 2px 16px -6px oklch(0.2 0.02 70 / 0.08);
+  --gradient-hero: linear-gradient(135deg, oklch(0.55 0.22 275) 0%, oklch(0.78 0.14 210) 100%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.18 0.03 265), oklch(0.16 0.03 265));
+  --gradient-text: linear-gradient(90deg, oklch(0.72 0.18 275), oklch(0.78 0.14 210), oklch(0.82 0.16 160));
+  --shadow-elegant: 0 24px 60px -24px oklch(0.55 0.22 275 / 0.45);
+  --shadow-card: 0 2px 16px -6px oklch(0 0 0 / 0.5);
 }
 
 @layer base {
