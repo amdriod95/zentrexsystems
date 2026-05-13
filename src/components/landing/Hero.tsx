@@ -1,140 +1,150 @@
 import { Button } from "@/components/ui/button";
-import { PhoneCall, CalendarCheck, ArrowRight, Check, Sparkles, TrendingUp, Star } from "lucide-react";
+import { ArrowRight, Check, TrendingUp, PhoneCall } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-24 overflow-hidden bg-background">
-      {/* Layered ambient background */}
+    <section
+      id="top"
+      className="relative pt-32 pb-28 overflow-hidden bg-background"
+    >
+      {/* Ambient glows */}
+      <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[oklch(0.55_0.22_275)]/20 blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-[oklch(0.78_0.14_210)]/15 blur-[150px]" />
+      {/* Faint grid */}
       <div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 15% 10%, oklch(0.92 0.03 165 / 0.55), transparent 60%), radial-gradient(ellipse 50% 45% at 90% 30%, oklch(0.9 0.04 35 / 0.35), transparent 65%)",
-        }}
-      />
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 -z-10 opacity-[0.18]"
+        className="absolute inset-0 -z-0 opacity-[0.06]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, oklch(0.18 0.005 60 / 0.08) 1px, transparent 1px), linear-gradient(to bottom, oklch(0.18 0.005 60 / 0.08) 1px, transparent 1px)",
+            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
           backgroundSize: "56px 56px",
-          maskImage: "radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent 80%)",
+          maskImage:
+            "radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent 80%)",
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        {/* Left: copy */}
-        <div className="lg:col-span-7 space-y-7 animate-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-card/70 backdrop-blur px-3.5 py-1.5 text-xs font-medium text-foreground/75 shadow-card">
-            <Sparkles className="h-3.5 w-3.5 text-brand-sage" />
-            New · GPT-4o voice engine now live
+      <div className="max-w-7xl w-full mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        {/* Left */}
+        <div className="flex flex-col space-y-8 animate-fade-up">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[oklch(0.55_0.22_275)]/10 border border-[oklch(0.55_0.22_275)]/30 w-fit">
+            <span className="flex h-2 w-2 rounded-full bg-[oklch(0.72_0.18_275)] mr-2 animate-pulse" />
+            <span className="text-xs font-semibold text-[oklch(0.78_0.14_275)] tracking-wider uppercase">
+              GPT-4o Voice Engine Live
+            </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight font-semibold">
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-foreground leading-[1.05] tracking-tight">
             Never miss a call.
             <br />
-            Never miss a <span className="font-serif-italic text-brand-sage">customer</span>.
+            Never miss a{" "}
+            <span className="text-gradient">customer.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
             Zentrex is the AI receptionist that picks up 24/7, qualifies leads,
             and books appointments straight into your calendar — sounding
             indistinguishable from a human.
           </p>
 
-          <div className="flex flex-wrap gap-3 pt-1">
+          <div className="flex flex-wrap gap-4 pt-2">
             <Button variant="hero" size="xl" asChild>
-              <a href="#contact">Book a demo <ArrowRight className="h-4 w-4" /></a>
+              <a href="#contact">
+                Book a demo <ArrowRight className="h-4 w-4" />
+              </a>
             </Button>
             <Button variant="soft" size="xl" asChild>
               <a href="#pricing">See pricing</a>
             </Button>
           </div>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-muted-foreground">
-            {["Live in 5 days", "No long-term contracts", "Cancel anytime"].map((t) => (
-              <span key={t} className="inline-flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-brand-sage" /> {t}
-              </span>
-            ))}
-          </div>
-
-          {/* Trust bar */}
-          <div className="pt-6 border-t border-border/70 flex flex-wrap items-center gap-x-8 gap-y-3">
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {[0,1,2,3].map((i) => (
-                  <div key={i} className="h-7 w-7 rounded-full border-2 border-background bg-secondary grid place-items-center text-[10px] font-semibold text-foreground/70">
-                    {["JM","SK","AR","TL"][i]}
-                  </div>
-                ))}
-              </div>
-              <div className="text-xs text-muted-foreground">
-                <div className="flex items-center gap-1 text-foreground">
-                  {[...Array(5)].map((_,i) => <Star key={i} className="h-3 w-3 fill-brand-sage text-brand-sage" />)}
-                  <span className="ml-1 font-semibold">4.9/5</span>
-                </div>
-                Trusted by 400+ local businesses
-              </div>
-            </div>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-6 border-t border-white/10">
+            {["Live in 5 days", "No long-term contracts", "Cancel anytime"].map(
+              (t) => (
+                <span
+                  key={t}
+                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                >
+                  <Check className="h-4 w-4 text-[oklch(0.78_0.14_160)]" /> {t}
+                </span>
+              ),
+            )}
           </div>
         </div>
 
-        {/* Right: conversation mockup with floating cards */}
-        <div className="lg:col-span-5 relative animate-fade-up" style={{ animationDelay: "0.15s" }}>
-          {/* Floating stat — top */}
-          <div className="hidden md:flex absolute -top-4 -left-6 z-10 items-center gap-3 rounded-2xl bg-card border border-border shadow-elegant px-4 py-3">
-            <div className="h-9 w-9 rounded-xl bg-brand-sage/15 grid place-items-center">
-              <TrendingUp className="h-4 w-4 text-brand-sage" />
-            </div>
-            <div>
-              <div className="text-base font-semibold leading-none">+38%</div>
-              <div className="text-[11px] text-muted-foreground mt-1">booked appointments</div>
-            </div>
-          </div>
+        {/* Right visual mockup */}
+        <div
+          className="relative animate-fade-up"
+          style={{ animationDelay: "0.15s" }}
+        >
+          <div className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-7 shadow-elegant overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.55_0.22_275)]/10 via-transparent to-[oklch(0.78_0.14_210)]/10 pointer-events-none" />
 
-          {/* Floating stat — bottom right */}
-          <div className="hidden md:flex absolute -bottom-5 -right-4 z-10 items-center gap-3 rounded-2xl bg-foreground text-background shadow-elegant px-4 py-3">
-            <div className="h-9 w-9 rounded-xl bg-background/10 grid place-items-center">
-              <PhoneCall className="h-4 w-4" />
-            </div>
-            <div>
-              <div className="text-base font-semibold leading-none">2,341</div>
-              <div className="text-[11px] text-background/70 mt-1">calls answered today</div>
-            </div>
-          </div>
-
-          <div className="relative rounded-3xl bg-card border border-border shadow-elegant p-6">
-            <div className="flex items-center justify-between mb-5">
+            <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/5 relative">
               <div className="flex items-center gap-3">
-                <div className="relative h-10 w-10 rounded-full bg-foreground grid place-items-center text-background">
-                  <PhoneCall className="h-4 w-4" />
-                  <span className="absolute -top-0.5 -right-0.5 h-3 w-3 rounded-full bg-brand-sage border-2 border-card animate-pulse" />
+                <div className="w-10 h-10 rounded-full bg-[oklch(0.55_0.22_275)]/20 grid place-items-center border border-[oklch(0.55_0.22_275)]/40">
+                  <div className="w-3.5 h-3.5 rounded-full bg-[oklch(0.72_0.18_275)] animate-pulse" />
                 </div>
-                <div className="text-left">
-                  <p className="text-sm font-semibold leading-tight">Incoming call</p>
-                  <p className="text-xs text-muted-foreground">+1 (415) 555-0142</p>
+                <div>
+                  <p className="text-foreground font-bold text-sm">
+                    Bright Smile Dental
+                  </p>
+                  <p className="text-xs text-[oklch(0.78_0.14_210)]">
+                    AI Agent · +1 (415) 555-0142
+                  </p>
                 </div>
               </div>
-              <span className="text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1 rounded-full bg-brand-sage/15 text-brand-sage">
+              <span className="px-2 py-1 rounded bg-[oklch(0.78_0.18_160)]/10 border border-[oklch(0.78_0.18_160)]/30 text-[10px] font-bold text-[oklch(0.82_0.18_160)] uppercase tracking-tighter">
                 AI Live
               </span>
             </div>
 
-            <div className="space-y-2.5 text-left">
-              <Bubble who="ai">Hi! Thanks for calling Bright Smile Dental. How can I help?</Bubble>
-              <Bubble who="user">I'd like to book a cleaning next week.</Bubble>
-              <Bubble who="ai">I have Tuesday at 2pm or Thursday at 10am. Which works?</Bubble>
+            <div className="space-y-4 relative">
+              <Bubble who="ai">
+                Hi! Thanks for calling Bright Smile Dental. How can I help you
+                today?
+              </Bubble>
+              <Bubble who="user">
+                I'd like to book a cleaning next week.
+              </Bubble>
+              <Bubble who="ai">
+                I have Tuesday at 2pm or Thursday at 10am. Which works best?
+              </Bubble>
               <Bubble who="user">Tuesday at 2 — perfect.</Bubble>
-              <Bubble who="ai">Booked. Confirmation sent by SMS. See you then!</Bubble>
             </div>
 
-            <div className="flex items-center justify-between pt-4 mt-4 border-t border-border text-xs text-muted-foreground">
-              <span className="inline-flex items-center gap-1.5">
-                <CalendarCheck className="h-3.5 w-3.5 text-brand-sage" /> Appointment booked
-              </span>
-              <span className="font-mono tabular-nums">00:42</span>
+            <div className="flex items-center gap-2 pt-5 mt-5 border-t border-white/5 relative">
+              <div className="w-2 h-2 rounded-full bg-[oklch(0.78_0.14_210)] animate-pulse" />
+              <p className="text-xs text-[oklch(0.78_0.14_210)] font-medium tracking-wide">
+                Appointment scheduled · Tuesday 2:00 PM
+              </p>
+            </div>
+          </div>
+
+          {/* Floating stats */}
+          <div className="absolute -top-6 -right-4 bg-white/8 backdrop-blur-xl border border-white/15 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-float">
+            <div className="p-2 rounded-lg bg-[oklch(0.78_0.18_160)]/15 text-[oklch(0.82_0.18_160)]">
+              <TrendingUp className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="text-[10px] text-[oklch(0.82_0.18_160)] uppercase font-bold tracking-tighter">
+                Bookings
+              </p>
+              <p className="text-lg font-extrabold text-foreground leading-none">
+                +38%
+              </p>
+            </div>
+          </div>
+
+          <div className="absolute -bottom-6 -left-6 bg-white/8 backdrop-blur-xl border border-white/15 px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+            <div className="p-3 rounded-xl bg-[oklch(0.55_0.22_275)]/20 text-[oklch(0.78_0.18_275)]">
+              <PhoneCall className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="text-2xl font-extrabold text-foreground leading-none">
+                2,341
+              </p>
+              <p className="text-[11px] text-muted-foreground font-medium mt-1">
+                Calls answered today
+              </p>
             </div>
           </div>
         </div>
@@ -143,17 +153,26 @@ export function Hero() {
   );
 }
 
-function Bubble({ who, children }: { who: "ai" | "user"; children: React.ReactNode }) {
+function Bubble({
+  who,
+  children,
+}: {
+  who: "ai" | "user";
+  children: React.ReactNode;
+}) {
+  if (who === "ai") {
+    return (
+      <div className="flex justify-start">
+        <div className="bg-white/5 border border-white/5 rounded-2xl rounded-tl-none p-3.5 max-w-[85%]">
+          <p className="text-sm text-foreground/90 leading-relaxed">{children}</p>
+        </div>
+      </div>
+    );
+  }
   return (
-    <div className={`flex ${who === "user" ? "justify-end" : "justify-start"}`}>
-      <div
-        className={`max-w-[85%] text-sm px-4 py-2.5 rounded-2xl ${
-          who === "ai"
-            ? "bg-secondary text-foreground rounded-bl-md"
-            : "bg-foreground text-background rounded-br-md"
-        }`}
-      >
-        {children}
+    <div className="flex justify-end">
+      <div className="bg-[oklch(0.55_0.22_275)]/25 border border-[oklch(0.55_0.22_275)]/40 rounded-2xl rounded-tr-none p-3.5 max-w-[85%]">
+        <p className="text-sm text-foreground leading-relaxed">{children}</p>
       </div>
     </div>
   );
