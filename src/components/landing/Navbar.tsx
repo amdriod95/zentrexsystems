@@ -73,8 +73,8 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
-          <Button variant="hero" asChild>
-            <a href="#contact" onClick={() => setOpen(false)}>Book Demo</a>
+          <Button variant="hero" onClick={() => { setOpen(false); openBookDemo(); }}>
+            Book Demo
           </Button>
         </div>
       )}
