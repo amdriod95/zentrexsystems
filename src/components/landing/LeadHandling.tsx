@@ -37,7 +37,7 @@ export function LeadHandling() {
 
         <div className="relative">
           <div className="absolute -inset-6 bg-gradient-hero opacity-20 blur-3xl rounded-3xl" />
-          <div className="relative rounded-3xl bg-white border border-border shadow-elegant p-6">
+          <div className="relative rounded-3xl bg-white/5 border border-white/10 shadow-elegant p-6">
             <div className="flex items-center justify-between mb-5">
               <p className="font-semibold">Live Conversation</p>
               <span className="text-xs px-2 py-1 rounded-full bg-brand-pink/10 text-brand-pink font-medium flex items-center gap-1.5">

@@ -24,7 +24,7 @@ export function Reviews() {
         {reviews.map((r) => (
           <div
             key={r.name}
-            className="rounded-2xl bg-white border border-border p-7 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all duration-300"
+            className="rounded-2xl bg-white/5 border border-white/10 p-7 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all duration-300"
           >
             <div className="flex gap-1 mb-4 text-brand-orange">
               {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
