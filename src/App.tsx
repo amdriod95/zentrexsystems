@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { Problem } from "@/components/landing/Problem";
@@ -13,28 +12,7 @@ import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { BookDemoProvider } from "@/components/landing/BookDemoDialog";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Zentrex Systems — AI Receptionist That Never Misses a Call" },
-      {
-        name: "description",
-        content:
-          "Zentrex Systems is an AI receptionist that answers calls 24/7, books appointments, qualifies leads, and sends SMS confirmations — automatically.",
-      },
-      { property: "og:title", content: "Zentrex Systems — AI Receptionist 24/7" },
-      {
-        property: "og:description",
-        content:
-          "Never miss another customer call. Human-like AI voice, instant booking, multi-language support.",
-      },
-      { property: "og:type", content: "website" },
-    ],
-  }),
-  component: Index,
-});
-
-function Index() {
+export default function App() {
   return (
     <BookDemoProvider>
       <div className="min-h-screen bg-background overflow-x-hidden">
