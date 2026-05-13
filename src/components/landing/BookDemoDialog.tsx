@@ -10,7 +10,7 @@ type Ctx = { open: () => void };
 const BookDemoCtx = createContext<Ctx>({ open: () => {} });
 export const useBookDemo = () => useContext(BookDemoCtx);
 
-const RECIPIENT = "contact@zentrexsystems.com";
+const RECIPIENT = "Contact@zentrexsystems.com";
 
 export function BookDemoProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
