@@ -48,10 +48,8 @@ export function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
-            <Button variant="hero" size="xl" asChild>
-              <a href="#contact">
-                Book a demo <ArrowRight className="h-4 w-4" />
-              </a>
+            <Button variant="hero" size="xl" onClick={open}>
+              Book a demo <ArrowRight className="h-4 w-4" />
             </Button>
             <Button variant="soft" size="xl" asChild>
               <a href="#pricing">See pricing</a>
