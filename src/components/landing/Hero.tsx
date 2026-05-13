@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, TrendingUp, PhoneCall } from "lucide-react";
+import { useBookDemo } from "./BookDemoDialog";
 
 export function Hero() {
   return (
