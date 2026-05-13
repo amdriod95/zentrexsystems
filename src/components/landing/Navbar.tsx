@@ -48,8 +48,8 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button variant="hero" size="default" asChild className="hidden sm:inline-flex">
-            <a href="#contact">Book Demo</a>
+          <Button variant="hero" size="default" onClick={openBookDemo} className="hidden sm:inline-flex">
+            Book Demo
           </Button>
           <button
             className="lg:hidden h-10 w-10 grid place-items-center rounded-lg border border-border"
