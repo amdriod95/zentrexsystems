@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Onboarding received — Zentrex Systems</title>
+    <meta name="description" content="We've received your onboarding details. Our team will be in touch as soon as your AI receptionist is ready." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        min-height: 100vh;
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+        color: #fff;
+        background:
+          radial-gradient(1200px 600px at 20% 10%, rgba(99,102,241,0.25), transparent 60%),
+          radial-gradient(900px 500px at 85% 90%, rgba(56,189,248,0.18), transparent 60%),
+          #05060f;
+        display: flex; align-items: center; justify-content: center;
+        padding: 2rem;
+      }
+      .card {
+        max-width: 600px; width: 100%;
+        text-align: center;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.10);
+        backdrop-filter: blur(12px);
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        box-shadow: 0 30px 80px -20px rgba(79,70,229,0.45);
+      }
+      .icon-wrap {
+        width: 80px; height: 80px; margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #6366f1, #38bdf8);
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 20px 50px -10px rgba(99,102,241,0.6);
+        animation: pop .6s ease-out;
+      }
+      @keyframes pop { 0% { transform: scale(0); } 60% { transform: scale(1.1); } 100% { transform: scale(1); } }
+      .check { stroke-dasharray: 60; stroke-dashoffset: 60; animation: draw .6s .3s ease forwards; }
+      @keyframes draw { to { stroke-dashoffset: 0; } }
+      .eyebrow {
+        display: inline-flex; align-items: center; gap: .5rem;
+        font-size: .75rem; letter-spacing: .14em; text-transform: uppercase;
+        color: #a5b4fc; padding: .35rem .8rem;
+        background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3);
+        border-radius: 999px; margin-bottom: 1rem;
+      }
+      h1 {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400; font-size: clamp(2rem, 4.5vw, 2.75rem);
+        margin: .5rem 0 1rem; line-height: 1.15;
+      }
+      p { color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0 0 1rem; }
+      .highlight {
+        margin-top: 1.5rem; padding: 1rem 1.25rem;
+        background: rgba(99,102,241,0.08);
+        border: 1px solid rgba(99,102,241,0.2);
+        border-radius: 14px;
+        font-size: .92rem; color: rgba(255,255,255,0.85);
+      }
+      .highlight a { color: #93c5fd; text-decoration: none; font-weight: 600; }
+      .highlight a:hover { text-decoration: underline; }
+      .actions { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+      .btn {
+        display: inline-flex; align-items: center; gap: .5rem;
+        padding: .8rem 1.5rem; border-radius: 12px;
+        font-weight: 600; font-size: .95rem;
+        text-decoration: none; transition: all .2s;
+      }
+      .btn-primary {
+        background: linear-gradient(90deg, #6366f1, #38bdf8); color: #fff;
+        box-shadow: 0 10px 30px -10px rgba(99,102,241,0.6);
+      }
+      .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.08); }
+      .btn-ghost {
+        background: rgba(255,255,255,0.06); color: #fff;
+        border: 1px solid rgba(255,255,255,0.12);
+      }
+      .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="icon-wrap">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+          <path class="check" d="M5 12.5l4.5 4.5L19 7.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="eyebrow">Onboarding received</span>
+      <h1>You're all set — we have what we need.</h1>
+      <p>
+        Thanks for sharing the details about your business. Our team will start building
+        and training your AI receptionist right away. We'll reach out as soon as it's
+        ready for you to review.
+      </p>
+      <div class="highlight">
+        Have a question in the meantime? Email us at
+        <a href="mailto:contact@zentrexsystems.com">contact@zentrexsystems.com</a>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">Back to home</a>
+        <a class="btn btn-ghost" href="mailto:contact@zentrexsystems.com">Email the team</a>
+      </div>
+    </main>
+  </body>
+</html>
