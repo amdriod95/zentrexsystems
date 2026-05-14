@@ -1,11 +1,11 @@
 import { Section } from "./Section";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import { useBookDemo } from "./BookDemoDialog";
 
 const plans = [
   {
     name: "Starter", price: 397, tagline: "Perfect for small businesses",
+    href: "/397.html",
     features: [
       "500 AI voice minutes/month",
       "Call logs & transcripts",
@@ -17,6 +17,7 @@ const plans = [
   },
   {
     name: "Growth", price: 597, tagline: "For growing businesses", popular: true,
+    href: "/597.html",
     features: [
       "1,000 AI voice minutes/month",
       "Everything in Starter",
@@ -27,6 +28,7 @@ const plans = [
   },
   {
     name: "Pro", price: 997, tagline: "For high-volume operations",
+    href: "/997.html",
     features: [
       "2,000 AI voice minutes/month",
       "Everything in Growth",
@@ -38,7 +40,6 @@ const plans = [
 ];
 
 export function Pricing() {
-  const { open } = useBookDemo();
   return (
     <Section
       id="pricing"
@@ -80,10 +81,10 @@ export function Pricing() {
             <Button
               variant={p.popular ? "soft" : "hero"}
               size="lg"
-              onClick={open}
+              asChild
               className={`w-full ${p.popular ? "bg-white text-[oklch(0.45_0.18_270)] border-white hover:bg-white/90" : ""}`}
             >
-              Get Started
+              <a href={p.href}>Get Started</a>
             </Button>
           </div>
         ))}
