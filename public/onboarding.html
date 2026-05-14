@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Client Onboarding — Zentrex Systems</title>
+    <meta name="description" content="Welcome aboard. Tell us about your business so we can configure your AI receptionist." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        min-height: 100vh;
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+        color: #fff;
+        background:
+          radial-gradient(1200px 600px at 20% 10%, rgba(99,102,241,0.25), transparent 60%),
+          radial-gradient(900px 500px at 85% 90%, rgba(56,189,248,0.18), transparent 60%),
+          #05060f;
+        padding: 2.5rem 1rem;
+      }
+      .wrap { max-width: 880px; margin: 0 auto; }
+      .header { text-align: center; margin-bottom: 2rem; }
+      .eyebrow {
+        display: inline-flex; align-items: center; gap: .5rem;
+        font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+        color: #a5b4fc; padding: .35rem .8rem;
+        background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3);
+        border-radius: 999px;
+      }
+      h1 {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400; font-size: clamp(2rem, 4vw, 3rem);
+        margin: 1rem 0 .5rem;
+      }
+      .sub { color: rgba(255,255,255,0.65); margin: 0; }
+
+      .card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.10);
+        backdrop-filter: blur(12px);
+        border-radius: 24px;
+        padding: 2rem;
+        box-shadow: 0 30px 80px -20px rgba(79,70,229,0.35);
+      }
+
+      /* Stepper */
+      .stepper { display: flex; gap: .5rem; margin-bottom: 1.5rem; }
+      .step-pill {
+        flex: 1; height: 6px; border-radius: 999px;
+        background: rgba(255,255,255,0.08);
+        overflow: hidden; position: relative;
+      }
+      .step-pill.active::after, .step-pill.done::after {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(90deg, #6366f1, #38bdf8);
+      }
+      .step-meta {
+        display: flex; justify-content: space-between; align-items: center;
+        margin-bottom: 1.5rem; color: rgba(255,255,255,0.6); font-size: .85rem;
+      }
+      .step-title { color: #fff; font-weight: 600; font-size: 1.05rem; }
+
+      /* Fields */
+      .grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+      @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+      .field { display: flex; flex-direction: column; gap: .4rem; }
+      .field.full { grid-column: 1 / -1; }
+      label { font-size: .85rem; color: rgba(255,255,255,0.8); font-weight: 500; }
+      .req { color: #f472b6; }
+      input, select, textarea {
+        width: 100%;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.15);
+        color: #fff;
+        padding: .7rem .85rem;
+        border-radius: 10px;
+        font: inherit;
+        outline: none;
+        transition: border-color .15s, background .15s;
+      }
+      input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.35); }
+      input:focus, select:focus, textarea:focus {
+        border-color: #6366f1;
+        background: rgba(255,255,255,0.08);
+      }
+      textarea { min-height: 90px; resize: vertical; }
+      select option { background: #0f172a; color: #fff; }
+
+      /* Nav */
+      .nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
+      button {
+        font: inherit; cursor: pointer; border: 0; padding: .8rem 1.5rem;
+        border-radius: 12px; font-weight: 600; transition: all .2s;
+      }
+      .btn-prev {
+        background: rgba(255,255,255,0.06); color: #fff;
+        border: 1px solid rgba(255,255,255,0.12);
+      }
+      .btn-prev:hover { background: rgba(255,255,255,0.1); }
+      .btn-next, .btn-submit {
+        background: linear-gradient(90deg, #6366f1, #38bdf8);
+        color: #fff;
+        box-shadow: 0 10px 30px -10px rgba(99,102,241,0.6);
+      }
+      .btn-next:hover, .btn-submit:hover { transform: translateY(-1px); filter: brightness(1.08); }
+      .btn-prev:disabled { opacity: .4; cursor: not-allowed; }
+
+      .step { display: none; animation: fade .25s ease; }
+      .step.active { display: block; }
+      @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+      .footer-note { text-align: center; color: rgba(255,255,255,0.45); font-size: .8rem; margin-top: 1.5rem; }
+      .section-hint { color: rgba(255,255,255,0.55); font-size: .9rem; margin: 0 0 1.25rem; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <span class="eyebrow">✨ Welcome aboard</span>
+        <h1>Let's set up your AI receptionist</h1>
+        <p class="sub">A few quick details and we'll have your assistant trained, branded, and ready to take calls.</p>
+      </div>
+
+      <div class="card">
+        <div class="stepper">
+          <div class="step-pill active" data-pill="1"></div>
+          <div class="step-pill" data-pill="2"></div>
+          <div class="step-pill" data-pill="3"></div>
+        </div>
+        <div class="step-meta">
+          <span>Step <strong id="curStep">1</strong> of 3</span>
+          <span class="step-title" id="stepTitle">Business Information</span>
+        </div>
+
+        <form action="/send.php" method="POST" id="onboardForm" novalidate>
+          <input type="hidden" name="form_type" value="onboarding" />
+
+          <!-- STEP 1 -->
+          <section class="step active" data-step="1">
+            <p class="section-hint">Tell us about your business.</p>
+            <div class="grid">
+              <div class="field">
+                <label>Business Name <span class="req">*</span></label>
+                <input name="business_name" required placeholder="Acme Dental" />
+              </div>
+              <div class="field">
+                <label>Owner / Contact Name <span class="req">*</span></label>
+                <input name="owner_name" required placeholder="Jane Doe" />
+              </div>
+              <div class="field">
+                <label>Business Email <span class="req">*</span></label>
+                <input type="email" name="business_email" required placeholder="hello@acme.com" />
+              </div>
+              <div class="field">
+                <label>Business Phone <span class="req">*</span></label>
+                <input type="tel" name="business_phone" required placeholder="+1 555 123 4567" />
+              </div>
+              <div class="field">
+                <label>Website URL</label>
+                <input type="url" name="website_url" placeholder="https://acme.com" />
+              </div>
+              <div class="field">
+                <label>Industry / Niche <span class="req">*</span></label>
+                <select name="industry" required>
+                  <option value="" disabled selected>Select…</option>
+                  <option>Dental</option><option>Medical</option><option>Salon &amp; Spa</option>
+                  <option>Home Services</option><option>Legal</option><option>Real Estate</option>
+                  <option>Auto</option><option>Other</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label>Business Address <span class="req">*</span></label>
+                <input name="business_address" required placeholder="123 Main St, City, State, ZIP" />
+              </div>
+            </div>
+          </section>
+
+          <!-- STEP 2 -->
+          <section class="step" data-step="2">
+            <p class="section-hint">Help us tailor the assistant to your operations.</p>
+            <div class="grid">
+              <div class="field full">
+                <label>Business Hours <span class="req">*</span></label>
+                <textarea name="business_hours" required placeholder="Mon–Fri 9am–6pm, Sat 10am–2pm, Closed Sun"></textarea>
+              </div>
+              <div class="field full">
+                <label>Services Offered <span class="req">*</span></label>
+                <textarea name="services_offered" required placeholder="List the main services or products you offer"></textarea>
+              </div>
+              <div class="field full">
+                <label>Frequently Asked Questions <span class="req">*</span></label>
+                <textarea name="faqs" required placeholder="What questions do customers ask most often? (and your preferred answers)"></textarea>
+              </div>
+              <div class="field full">
+                <label>Appointment Booking Process <span class="req">*</span></label>
+                <textarea name="booking_process" required placeholder="How do you currently book appointments? (calendar tool, phone, etc.)"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- STEP 3 -->
+          <section class="step" data-step="3">
+            <p class="section-hint">Personality, voice, and call-handling preferences.</p>
+            <div class="grid">
+              <div class="field full">
+                <label>Preferred Greeting Message <span class="req">*</span></label>
+                <textarea name="greeting_message" required placeholder="e.g. Thanks for calling Acme Dental, this is Aria — how can I help?"></textarea>
+              </div>
+              <div class="field">
+                <label>Call Transfer Number</label>
+                <input type="tel" name="transfer_number" placeholder="+1 555 987 6543" />
+              </div>
+              <div class="field">
+                <label>Languages Required <span class="req">*</span></label>
+                <input name="languages" required placeholder="English, Spanish" />
+              </div>
+              <div class="field full">
+                <label>Team / Staff Names</label>
+                <textarea name="team_names" placeholder="List staff the AI should know (name — role)"></textarea>
+              </div>
+              <div class="field">
+                <label>Preferred AI Voice <span class="req">*</span></label>
+                <select name="ai_voice" required>
+                  <option value="" disabled selected>Select…</option>
+                  <option>Female — Warm</option>
+                  <option>Female — Professional</option>
+                  <option>Male — Warm</option>
+                  <option>Male — Professional</option>
+                  <option>Neutral</option>
+                  <option>No preference</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Tone / Personality <span class="req">*</span></label>
+                <select name="ai_tone" required>
+                  <option value="" disabled selected>Select…</option>
+                  <option>Friendly &amp; Casual</option>
+                  <option>Professional &amp; Polished</option>
+                  <option>Warm &amp; Empathetic</option>
+                  <option>Energetic &amp; Upbeat</option>
+                  <option>Calm &amp; Reassuring</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <div class="nav">
+            <button type="button" class="btn-prev" id="prevBtn" disabled>← Back</button>
+            <button type="button" class="btn-next" id="nextBtn">Continue →</button>
+            <button type="submit" class="btn-submit" id="submitBtn" style="display:none">Submit onboarding</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="footer-note">Your information is sent securely to the Zentrex Systems team.</p>
+    </div>
+
+    <script>
+      (function () {
+        var steps = document.querySelectorAll(".step");
+        var pills = document.querySelectorAll(".step-pill");
+        var titles = ["Business Information", "AI Receptionist Setup", "Voice & Personality"];
+        var prevBtn = document.getElementById("prevBtn");
+        var nextBtn = document.getElementById("nextBtn");
+        var submitBtn = document.getElementById("submitBtn");
+        var curEl = document.getElementById("curStep");
+        var titleEl = document.getElementById("stepTitle");
+        var i = 0;
+
+        function render() {
+          steps.forEach(function (s, idx) { s.classList.toggle("active", idx === i); });
+          pills.forEach(function (p, idx) {
+            p.classList.toggle("done", idx < i);
+            p.classList.toggle("active", idx === i);
+          });
+          curEl.textContent = i + 1;
+          titleEl.textContent = titles[i];
+          prevBtn.disabled = i === 0;
+          var last = i === steps.length - 1;
+          nextBtn.style.display = last ? "none" : "inline-block";
+          submitBtn.style.display = last ? "inline-block" : "none";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function validateStep() {
+          var fields = steps[i].querySelectorAll("input, select, textarea");
+          for (var f = 0; f < fields.length; f++) {
+            if (!fields[f].checkValidity()) {
+              fields[f].reportValidity();
+              return false;
+            }
+          }
+          return true;
+        }
+
+        nextBtn.addEventListener("click", function () {
+          if (!validateStep()) return;
+          if (i < steps.length - 1) { i++; render(); }
+        });
+        prevBtn.addEventListener("click", function () {
+          if (i > 0) { i--; render(); }
+        });
+        render();
+      })();
+    </script>
+  </body>
+</html>
